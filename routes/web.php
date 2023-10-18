@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/connection', function(){
+    try {
+        $dbconnect = DB::connection()->getPDO();
+        $dbname = DB::connection()->getDatabaseName();
+        echo "Connected successfully to the database. Database name is :".$dbname;
+     } catch(Exception $e) {
+        echo "Error in connecting to the database";
+     }
 });
