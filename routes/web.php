@@ -15,15 +15,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/connection', function(){
     try {
         $dbconnect = DB::connection()->getPDO();
         $dbname = DB::connection()->getDatabaseName();
         echo "Connected successfully to the database. Database name is :".$dbname;
-     } catch(Exception $e) {
+    } catch(Exception $e) {
         echo "Error in connecting to the database";
-     }
+    }
+
+    return view('welcome');
+});
+
+Route::get('/test', function () {
+    try {
+        $dbconnect = DB::connection()->getPDO();
+        $dbname = DB::connection()->getDatabaseName();
+        return "Connected successfully to the database. Database name is :".$dbname;
+    } catch(Exception $e) {
+        return "Error in connecting to the database";
+    }
 });
