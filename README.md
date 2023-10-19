@@ -11,12 +11,12 @@
 
 ## Authentication using Laravel Jetstream
 ### Reference: https://jetstream.laravel.com/installation.html
-composer require laravel/jetstream
+- **composer require laravel/jetstream**
 
 ### Install Jetstream With Livewire
-php artisan jetstream:install livewire --dark
+- **php artisan jetstream:install livewire --dark**
 
 ### Finalizing The Installation
-- **[npm install]**
-- **[npm run build]**
-- **[php artisan migrate]**
+- **npm install**
+- **npm run build**
+- **php artisan migrate**
