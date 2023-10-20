@@ -19,13 +19,13 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function () {
-    // try {
+    try {
         $dbconnect = DB::connection()->getPDO();
         $dbname = DB::connection()->getDatabaseName();
         return "Connected successfully to the database. Database name is :".$dbname;
-    // } catch(Exception $e) {
-        // return "Error in connecting to the database";
-    // }
+    } catch(Exception $e) {
+        return "Error in connecting to the database";
+    }
 });
 
 Route::middleware([
