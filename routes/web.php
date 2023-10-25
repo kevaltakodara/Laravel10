@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
+Route::get('/check/connection', function () {
     try {
         $dbconnect = DB::connection()->getPDO();
         $dbname = DB::connection()->getDatabaseName();

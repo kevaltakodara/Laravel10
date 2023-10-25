@@ -15,7 +15,7 @@ jobs:
           php-version: '8.1.2'
       
       - name: Install dependencies
-        run: composer install - no-dev
+        run: composer install
         
       - name: Set up AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
@@ -24,4 +24,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Deploy to AWS EC2
-        run: ssh ${{ secrets.AWS_INSTANCE_IP }} "cd /var/www/html/Laravel10 && git pull && composer install - no-dev && php artisan migrate - force && php artisan optimize"
+        run: ssh ${{ secrets.AWS_INSTANCE_IP }} "cd /var/www/html/Laravel10 && git pull && composer install && php artisan migrate && php artisan optimize"
