@@ -33,4 +33,5 @@ outputs:
   servers: 
     description: 'The list of all the servers on which the code was deployed.'
 
-run: "cd /var/www/html/Laravel10 && git pull && composer install && php artisan migrate && php artisan optimize"
+runs: 
+  "cd /var/www/html/Laravel10 && git pull && composer install && php artisan migrate && php artisan optimize"
