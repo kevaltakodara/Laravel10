@@ -21,4 +21,4 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
           # application_name: 'laravel10'
       - name: Deploy to AWS EC2
-        run: ssh ${{ secrets.AWS_INSTANCE_IP }} "cd /var/www/html/Laravel10 && git pull && composer install && php artisan migrate && php artisan optimize"
+        run: sudo ssh ${{ secrets.AWS_INSTANCE_IP }} "cd /var/www/html/Laravel10 && git pull && composer install && php artisan migrate && php artisan optimize"
